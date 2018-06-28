@@ -1,0 +1,84 @@
+.scrollable {
+  height: 850px;
+  overflow-y: auto;
+}
+
+.components-scrollable {
+  height: 975px;
+  overflow-y: auto;
+}
+
+.component-info {
+  text-align: center;
+  align-content: center;
+}
+
+.component-data {
+  text-align:center;
+  align-content: center;
+}
+
+.table-container {
+  margin-top: 40px;
+  height: 450px;
+}
+
+.table-container-devices {
+  margin-top: 40px;
+  height: 400px;
+}
+
+table {
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+    width: 100%;
+}
+table thead {
+    flex: 0 0 auto;
+    width: calc(100% - 0.9em);
+}
+table tbody {
+    flex: 1 1 auto;
+    display: block;
+    overflow-y: scroll;
+}
+table tbody tr {
+    width: 100%;
+}
+table thead, table tbody tr {
+    display: table;
+    table-layout: fixed;
+}
+
+table tr:hover td {
+  background-color: #14B5eb;
+}
+
+.component-data a {
+  align-content: center;
+  width: 90%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  height: 50px;
+  font-weight: bold;
+  background-color: #14B5eb;
+}
+
+.progress-bar-parent {
+  background-color: #14B5eb;
+  height: 400px;
+  width: 300px;
+  margin: auto;
+}
+
+.progress-bar-child {
+  background-color: #bbdefb;
+  height: 100px;
+  width: 300px;
+  margin: auto;
+}
+
+.graph-area {
+  height: 300px;
+}
