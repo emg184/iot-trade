@@ -36,10 +36,12 @@ const DeviceInfoTable = (props) => {
       <tbody style={tbodyStyle} >
       {
         props.devices.map( x => {
-          <tr>
-            <td>x.key</td>
-            <td>x.value</td>
-          </tr>
+          return(
+            <tr>
+              <td>{x.key}</td>
+              <td>{x.value}</td>
+            </tr>
+          )
         })
       }
       </tbody>

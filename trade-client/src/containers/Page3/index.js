@@ -58,9 +58,61 @@ class Page3 extends Component {
   constructor() {
     super();
     this.state = {
-      devices: [],
+      devices: [
+        {
+          serial_number: 427,
+          part_number: "0EFxyz",
+          location: "Labcorp",
+          lot_number: "12345",
+        },
+        {
+          serial_number: 428,
+          part_number: "0EFxyz",
+          location: "Quest",
+          lot_number: "12345",
+        },
+        {
+          serial_number: 429,
+          part_number: "0EFxyz",
+          location: "PUH",
+          lot_number: "12345",
+        },
+        {
+          serial_number: 430,
+          part_number: "0EFxyz",
+          location: "Labcorp",
+          lot_number: "12345",
+        },
+        {
+          serial_number: 431,
+          part_number: "0EFxyz",
+          location: "NYU",
+          lot_number: "12345",
+        },
+        {
+          serial_number: 432,
+          part_number: "0EFxyz",
+          location: "RWJ",
+          lot_number: "12345",
+        },
+        {
+          serial_number: 427,
+          part_number: "0EFxyz",
+          location: "Labcorp",
+          lot_number: "12345",
+        }
+      ],
       data: [],
-      device: [],
+      device: [
+        {key: "Serial #", value: 427 },
+        {key: "Lot #", value: "12354" },
+        {key: "Max Threshold", value: "4.6" },
+        {key: "Contact", value: "8564722459"},
+        {key: "Location", value: "NYU"},
+        {key: "Last Maintainence", value: "8-26-16"},
+        {key: "Next Maintainence", value: "8-26-17"},
+        {key: "Install Date", value: "8-26-15"}
+      ],
       intervalId: 0,
       currentCount: 0,
       percentage: "100px",
@@ -73,7 +125,7 @@ class Page3 extends Component {
 
 
   fetchDataFromServer() {
-    axios.get("http://localhost:8081/pump/1")
+    axios.get("http://api.bcfmanufacturing.com/pump/1")
     .then( x => formatData(x.data))
       .then( y => {
         let Percent = Math.random() * 30 + 70
@@ -179,7 +231,7 @@ class Page3 extends Component {
           <div className="scrollable">
             <div style={componentInfo} className="component-info">
             <h3 style={{textAlign: 'center' }}>Instrument Name</h3>
-            <img style={imageStyle} src={peripump} alt="" className="responsive-img z-depth-3" />
+            <img style={imageStyle} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUUkxRNOTztEK42_VOMhRDBP2CkNyLy1yfIeoO2rK-4nbfzVIrew" alt="" className="responsive-img z-depth-3" />
             <div style={tableStyles} className="table-container">
             {
               <DeviceInfoTable devices={this.state.device} />

@@ -14,12 +14,14 @@ const DeviceTable = (props) => {
       <tbody>
       {
         props.devices.map( x => {
-          <tr>
-            <td>x.serial_number</td>
-            <td>x.part_number</td>
-            <td>x.location</td>
-            <td>x.lot_number</td>
-          </tr>
+          return(
+            <tr>
+              <td>{x.serial_number}</td>
+              <td>{x.part_number}</td>
+              <td>{x.location}</td>
+              <td>{x.lot_number}</td>
+            </tr>
+          )
         })
       }
       </tbody>

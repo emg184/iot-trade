@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import LeftScrollBar from '../../components/Page2/leftscrollbar';
-import RightScrollBar from '../../components/Page2/leftscrollbar';
+import RightScrollBar from '../../components/Page2/rightscrollbar';
 import DeviceTable from '../../components/Page2/device_table';
 import logo from '../../images/bcflogo.png'
 
@@ -11,8 +11,51 @@ class Page2 extends Component {
     super();
     this.state = {
       companies: [],
-      devices: [],
-      components: []
+      devices: [
+        {
+          serial_number: 427,
+          part_number: "0EFxyz",
+          location: "Labcorp",
+          lot_number: "12345",
+        },
+        {
+          serial_number: 428,
+          part_number: "0EFxyz",
+          location: "Quest",
+          lot_number: "12345",
+        },
+        {
+          serial_number: 429,
+          part_number: "0EFxyz",
+          location: "PUH",
+          lot_number: "12345",
+        },
+        {
+          serial_number: 430,
+          part_number: "0EFxyz",
+          location: "Labcorp",
+          lot_number: "12345",
+        },
+        {
+          serial_number: 431,
+          part_number: "0EFxyz",
+          location: "NYU",
+          lot_number: "12345",
+        },
+        {
+          serial_number: 432,
+          part_number: "0EFxyz",
+          location: "RWJ",
+          lot_number: "12345",
+        },
+        {
+          serial_number: 427,
+          part_number: "0EFxyz",
+          location: "Labcorp",
+          lot_number: "12345",
+        }
+      ],
+      components: [{asdf: 'asdf'}]
     }
   }
 
@@ -55,8 +98,8 @@ class Page2 extends Component {
         </div>
         <div className="col s12 m8 l6">
           <div className="instrument-info">
-            <h1 style={{ textAlign: 'center' }}>Instrument Name</h1>
-            <img style={imageStyle} src="images/peripump.jpg" alt="" className="responsive-img" />
+            <h1 style={{ textAlign: 'center' }}>Siemens Atellica</h1>
+            <img style={imageStyle} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQii59OeQrAjysxDa9imUrRIuGoDm2iz0BkawTOje1NLHfNAKjb" alt="" className="responsive-img" />
             <h2 style={{ textAlign: 'center' }}>Devices</h2>
             <div style={tableStyles.tableContainer} className="table-container">
             {
