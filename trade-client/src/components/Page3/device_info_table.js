@@ -1,6 +1,6 @@
 import React from 'react';
 
-const DeviceTable = (props) => {
+const DeviceInfoTable = (props) => {
   var tableStyles = {
     tableContainer: { height: '450px', marginTop: '40px' },
     table: { display: "flex", flexFlow: "column", height: "100%", width: "100%"}
@@ -47,4 +47,4 @@ const DeviceTable = (props) => {
   )
 }
 
-export default DeviceTable;
+export default DeviceInfoTable;
