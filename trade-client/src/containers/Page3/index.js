@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import LeftScrollBar from '../../components/Page3/leftscrollbar';
-import RightScrollBar from '../../components/Page3/leftscrollbar';
+//import LeftScrollBar from '../../components/Page3/leftscrollbar';
+//import RightScrollBar from '../../components/Page3/leftscrollbar';
 import DeviceInfoTable from '../../components/Page3/device_info_table';
 import DeviceTable from '../../components/Page3/device_table';
 import logo from '../../images/bcflogo.png';
-import peripump from '../../images/peripump.jpg';
+
 import { LineChart,
          CartesianGrid,
          XAxis,
@@ -104,6 +104,7 @@ class Page3 extends Component {
       ],
       data: [],
       device: [
+        {key: "Name", value: "Maestro Piston Pump"},
         {key: "Serial #", value: 427 },
         {key: "Lot #", value: "12354" },
         {key: "Max Threshold", value: "4.6" },
@@ -125,7 +126,7 @@ class Page3 extends Component {
 
 
   fetchDataFromServer() {
-    axios.get("http://api.bcfmanufacturing.com/pump/1")
+    axios.get("http://localhost:8081/pump/1")
     .then( x => formatData(x.data))
       .then( y => {
         let Percent = Math.random() * 30 + 70
@@ -141,8 +142,7 @@ class Page3 extends Component {
 
   componentDidMount() {
     var intervalId = setInterval(this.timer, 1000);
-    this.setState({intervalId: intervalId});
-    this.setState({currentCount: 5 });
+    this.setState({intervalId: intervalId, currentCount: 5 });
     this.fetchDataFromServer();
   }
 
@@ -166,24 +166,24 @@ class Page3 extends Component {
       table: { display: "flex", flexFlow: "column", height: "100%", width: "100%"}
     }
 
-    var theadStyle = {
-      flex: '0 0 auto',
-      width: 'calc(100% - 0.9em)',
-      display: 'table',
-      tableLayout: 'fixed'
-    }
+    //var theadStyle = {
+    //  flex: '0 0 auto',
+    //  width: 'calc(100% - 0.9em)',
+    //  display: 'table',
+    //  tableLayout: 'fixed'
+    //}
 
-    var trStyle = {
-      width: '100%',
-      display: 'table',
-      tableLayout: 'fixed'
-    }
+    //var trStyle = {
+    //  width: '100%',
+    //  display: 'table',
+    //  tableLayout: 'fixed'
+    //}
 
-    var tbodyStyle = {
-      flex: '1 1 auto',
-      display: 'block',
-      overflowY: 'scroll'
-    }
+    //var tbodyStyle = {
+    //  flex: '1 1 auto',
+    //  display: 'block',
+    //  overflowY: 'scroll'
+    //}
 
     var imageStyle = {
       display: 'block',
@@ -224,13 +224,15 @@ class Page3 extends Component {
       margin: "auto"
     }
 
+    var deviceName = this.state.device.filter( x => x.key === 'Name')
+
     return(
       <div className="row">
         <div className="col s12 m4 l3">
-          <img className="responsive-img" src={logo} />
+          <img className="responsive-img" src={logo} alt="some stuff"/>
           <div className="scrollable">
             <div style={componentInfo} className="component-info">
-            <h3 style={{textAlign: 'center' }}>Instrument Name</h3>
+            <h3 style={{textAlign: 'center' }}>{ deviceName[0].value }</h3>
             <img style={imageStyle} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUUkxRNOTztEK42_VOMhRDBP2CkNyLy1yfIeoO2rK-4nbfzVIrew" alt="" className="responsive-img z-depth-3" />
             <div style={tableStyles} className="table-container">
             {

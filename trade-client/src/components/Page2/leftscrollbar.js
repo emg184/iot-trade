@@ -6,16 +6,15 @@ const LeftScrollBar = (props) => {
     height: '850px',
     overflowY: 'auto'
   }
-
   return(
     <div style={scrollable} className="scrollable">
     {
       props.companies.map( x => {
-          return <CompanyCard props={x} />
+          return <CompanyCard props={x} changeState={props.changeSelectedInstrument}/>
       })
     }
     </div>
   );
 }
 
-export default CompanyCard;
+export default LeftScrollBar;

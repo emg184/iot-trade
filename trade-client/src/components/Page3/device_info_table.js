@@ -1,10 +1,10 @@
 import React from 'react';
 
 const DeviceInfoTable = (props) => {
-  var tableStyles = {
-    tableContainer: { height: '450px', marginTop: '40px' },
-    table: { display: "flex", flexFlow: "column", height: "100%", width: "100%"}
-  }
+  //var tableStyles = {
+  //  tableContainer: { height: '450px', marginTop: '40px' },
+  //  table: { display: "flex", flexFlow: "column", height: "100%", width: "100%"}
+  //}
 
   var theadStyle = {
     flex: '0 0 auto',
@@ -13,11 +13,11 @@ const DeviceInfoTable = (props) => {
     tableLayout: 'fixed'
   }
 
-  var trStyle = {
-    width: '100%',
-    display: 'table',
-    tableLayout: 'fixed'
-  }
+  //var trStyle = {
+  //  width: '100%',
+  //  display: 'table',
+  //  tableLayout: 'fixed'
+  //}
 
   var tbodyStyle = {
     flex: '1 1 auto',

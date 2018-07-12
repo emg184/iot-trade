@@ -15,6 +15,7 @@ module.exports = app => {
     res.json(result));
   });
   app.get('/pump/:pumpId', function(req, res, next) {
+    console.log('here')
     queries.getDeviceResults(req.params.pumpId)
       .then(result => {
         res.json(result)

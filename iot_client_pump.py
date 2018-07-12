@@ -28,5 +28,5 @@ for i in range(0,5):
 
 newData = json.dumps(pump)
 for i in range(1, 10):
-    r = requests.post('http://api.bcfmanufacturing.com/pump', data = { 'pumps': newData })
+    r = requests.post('http://localhost:8081/pump', data = { 'pumps': newData })
     time.sleep(5)
