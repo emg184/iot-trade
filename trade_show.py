@@ -5,8 +5,8 @@ import requests
 import json
 import Adafruit_ADS1x15
 
-adc = Adafruit_ADS1x15.ADS1015()
-adc2 = Adafruit_ADS1x15.ADS1015(address=0x49)
+#adc = Adafruit_ADS1x15.ADS1015()
+#adc2 = Adafruit_ADS1x15.ADS1015(address=0x49)
 
 GPIO.setup(0, GPIO.IN)
 input = GPIO.input(0)
@@ -25,23 +25,27 @@ while True:
     input = GPIO.input(0)
     if input == 1 and stateChange == True:
         if valveCounter = 0:
-            valve1Object['activated'] = readAdc(0)
+            print("We're here 1")
+            #valve1Object['activated'] = readAdc(0)
             stateChange = false
             valveCounter++
         if valveCounter = 2:
-            valve2Object['activated'] = readAdc(1)
+            print("We're here 2")
+            #valve2Object['activated'] = readAdc(1)
             stateChange = false
             valveCounter++
     elif input == 0 and stateChange = False:
         if valveCounter = 1:
-            valve1Object['deactivated'] = readAdc(0)
+            print("We're here 3")
+            #valve1Object['deactivated'] = readAdc(0)
             stateChange = true
             valveCounter++
         if valveCounter = 3:
-            valve2Object['deactivated'] = readAdc(1)
+            print("We're here 4")
+            #valve2Object['deactivated'] = readAdc(1)
             stateChange = true
             valveCounter = 0
-
+'''
 def readPump():
     pump1Object['level1'] = readAdc(2)
     pump1Object['level2'] = readAdc(3)
@@ -75,7 +79,7 @@ def readAdc2(channel):
     average /= numSamples
     adc.stop_adc()
     return average
-
+'''
 def sendData(httpBody):
     pass
 
