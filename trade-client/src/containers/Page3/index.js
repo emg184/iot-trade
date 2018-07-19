@@ -166,25 +166,6 @@ class Page3 extends Component {
       table: { display: "flex", flexFlow: "column", height: "100%", width: "100%"}
     }
 
-    //var theadStyle = {
-    //  flex: '0 0 auto',
-    //  width: 'calc(100% - 0.9em)',
-    //  display: 'table',
-    //  tableLayout: 'fixed'
-    //}
-
-    //var trStyle = {
-    //  width: '100%',
-    //  display: 'table',
-    //  tableLayout: 'fixed'
-    //}
-
-    //var tbodyStyle = {
-    //  flex: '1 1 auto',
-    //  display: 'block',
-    //  overflowY: 'scroll'
-    //}
-
     var imageStyle = {
       display: 'block',
       marginLeft: 'auto',

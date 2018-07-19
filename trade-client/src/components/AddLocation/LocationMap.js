@@ -1,15 +1,10 @@
 /*global google*/
 import React from 'react';
 import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow } from "react-google-maps";
-//import houseImage from '../images/house-icon.png';
-import logo from '../../images/test_tube.png'
+import icon from '../../images/test_tube.png';
+//import logo from '../../images/test_tube.png'
 
-const MyMapComponent = withScriptjs(withGoogleMap((props) => {
-
-  function onDoubleClick(property_id) {
-    window.location = `http://localhost:3000/`
-  }
-
+const LocationMap = withScriptjs(withGoogleMap((props) => {
   return(
     <GoogleMap
       defaultZoom={5}
@@ -22,20 +17,11 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) => {
             key={x.property_id}
             position={x.location}
             icon={{
-              url: logo,
+              url: icon,
               scaledSize: new google.maps.Size(31, 43)
             }}
             onClick={() => props.redirectFunction(x)}
-            onDblClick={onDoubleClick.bind(this, x.property_id)}
           >
-          { x.infoStatus &&
-            <InfoWindow>
-              <div>
-                <p>{x.site_name}</p>
-                <img src={x.image_url} />
-              </div>
-            </InfoWindow>
-          }
           </Marker>
         )
       })
@@ -49,4 +35,4 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) => {
 
 
 
-export default MyMapComponent;
+export default LocationMap;
