@@ -14,10 +14,11 @@ requests_log = logging.getLogger("requests.packages.urllib3")
 requests_log.setLevel(logging.DEBUG)
 requests_log.propagate = True
 
-key = '83e44c91-f1e5-4018-bc39-6e8cf3710350'
-base_url = 'https://bio-chem-dev-twx.es.thingworx.com/Thingworx/Things/Pump1/Properties/*?appKey='
+key = '76fa2257-cd08-4693-b61f-6f882f1d222e'
+base_url = 'https://pp-1807091822o7.portal.ptc.io/Thingworx/Things/Pump_0001/Properties/*?appKey='
 app_url = base_url + key
 headers = { 'Content-Type': 'application/json', 'appKey': key }
+
 
 pump1Object = {}
 payload = {'Level1': 7.00, 'Level2': 8.00, 'Level3': 9.00, 'PumpThreshold': 10.00}
